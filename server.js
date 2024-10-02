@@ -1,8 +1,10 @@
 const express = require("express");
+var cors = require("cors");
 const path = require("path");
 const { PrismaClient } = require("@prisma/client");
 
 const app = express();
+app.use(cors());
 const prisma = new PrismaClient({
   log: ["query", "info", "warn"],
 });
